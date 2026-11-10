@@ -48,7 +48,16 @@ A trivia quiz that pulls questions from the Open Trivia Database, shuffles the a
 - Testing with Vitest and React Testing Library, and running accessibility checks with `jest-axe`
 - Setting up a Git repo, fixing a `master`/`main` mismatch and pushing to GitHub
 
+## Deployment notes
 
+This is a static front-end app with no server or database, so deployment is simple:
+
+- **Static hosting:** `npm run build` outputs a `dist/` folder, which any static host can serve
+- **Third-party API:** questions come from the Open Trivia Database, which allows one request per 5 seconds per IP, so rapid restarts can return a rate-limit error
+- **No accounts or backend:** the only saved data is your best score and theme, stored in your browser's `localStorage`
+- **Single player:** all quiz state lives in each visitor's browser, so players never affect each other
+
+  
 ---
 
 # Live Demo
